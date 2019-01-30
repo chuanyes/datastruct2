@@ -1,0 +1,27 @@
+#include <iostream>
+#include<math.h>
+//#include"标头.h"
+
+int fun1(int a, int b, int x,int A[]) {
+	if (a <= b) {
+		if (x == A[(a + b) / 2])
+			return (a + b) / 2;
+		else if (x<(a + b) / 2)
+			fun1(a, (a + b) / 2 - 1,  x, A);
+		else
+			fun1((a + b) / 2 + 1, b, x, A);
+	}
+	else
+		return -1;
+
+}
+int main() {
+
+
+	int A[9] = { 1,2,3,4,5,6,7,8,9 };
+	std::cout << fun1(0,8,90,A)<<std::endl;
+	
+	system("pause");
+	return 0;
+}
+
